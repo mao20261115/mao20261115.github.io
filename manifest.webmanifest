@@ -1,0 +1,10 @@
+{
+  "name": "計画的に勉強しようアプリ v53",
+  "short_name": "学習計画",
+  "description": "期末考査までの道のりを、キャラクターと一緒に確認する授業用アプリ",
+  "lang": "ja",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#bce9ff",
+  "theme_color": "#17375f"
+}
