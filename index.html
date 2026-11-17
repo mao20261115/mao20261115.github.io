@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#17375f"><link rel="manifest" href="manifest.webmanifest">
-<title>期末考査までの道のり v62 Web版</title>
+<title>期末考査までの道のり v63 Web版</title>
 <style>
 :root{--navy:#17375f;--ink:#1c3450;--green:#45bd78;--progress:4%}*{box-sizing:border-box}html,body{margin:0;min-height:100%}body{font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",system-ui,sans-serif;color:var(--ink);background:linear-gradient(180deg,#bce9ff 0 58%,#b8e98d 58%);overflow-x:hidden}body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 10% 15%,#fff 0 2.8%,transparent 3%),radial-gradient(circle at 85% 12%,#fff 0 3.5%,transparent 3.7%),radial-gradient(circle at 42% 24%,#fff 0 2%,transparent 2.2%)}
 .app{position:relative;z-index:1;max-width:1500px;min-height:100vh;margin:auto;padding:22px 34px 30px;display:flex;flex-direction:column;gap:16px}header{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:18px}.mini{font-weight:950;letter-spacing:.12em;color:#2b6992}.title{text-align:center}.title h1{margin:0;font-size:clamp(2rem,4.2vw,4rem);line-height:1;color:var(--navy);text-shadow:0 4px #fff}.version-badge{display:inline-block;margin-left:.35em;padding:.16em .46em;border:3px solid var(--navy);border-radius:999px;background:#ffd43b;color:#17375f;font-size:.34em;line-height:1;vertical-align:.28em;text-shadow:none;box-shadow:3px 3px #79adca;white-space:nowrap}.title p{margin:.55rem 0 0;font-weight:900;font-size:clamp(.95rem,1.5vw,1.25rem)}.count{justify-self:end;background:#fff;border:4px solid var(--navy);border-radius:19px;padding:8px 18px;text-align:center;box-shadow:5px 5px #79adca}.count span{display:block;font-weight:900}.count strong{display:block;color:#dc4c48;font-size:clamp(1.3rem,2.4vw,2rem)}
@@ -235,6 +235,7 @@ body.presentation-mode{height:100dvh;min-height:0;overflow:hidden}
 .chrono-display{display:flex;min-width:0;height:100%;flex-direction:column;align-items:center;justify-content:center;text-align:center}.chrono-name{margin:0 0 1vh;color:#f2c94c;font-size:clamp(1rem,2vw,2rem);font-weight:950;letter-spacing:.12em}.chrono-time{font-variant-numeric:tabular-nums;line-height:.82;font-size:clamp(5rem,14vw,13rem);font-weight:950;letter-spacing:-.06em;text-shadow:0 7px 0 #061a16,0 0 30px #5fe8a5}.chrono-date{margin-top:clamp(10px,2vh,24px);font-size:clamp(1.15rem,2.4vw,2.2rem);font-weight:900}.chrono-status{margin:clamp(12px,2vh,24px) 0 0;min-height:2.7em;color:#fff5b5;font-size:clamp(1.45rem,3.2vw,3.2rem);font-weight:950;line-height:1.25;white-space:pre-line}.chrono-countdown{display:none;margin-top:1vh;color:#fff;font-size:clamp(4rem,10vw,9rem);font-weight:950;line-height:1}.chrono-countdown.show{display:block;animation:chronoPulse .7s ease-in-out infinite alternate}
 .chrono-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:clamp(14px,3vh,30px)}.chrono-actions button{border:4px solid #fff;border-radius:999px;padding:12px 24px;font:inherit;font-size:clamp(1rem,1.8vw,1.5rem);font-weight:950;cursor:pointer}.chrono-seat{background:#f2c94c;color:#17375f}.chrono-config{background:#fff;color:#174f40}.chrono-speech{position:absolute;z-index:4;left:44%;bottom:5%;width:min(48vw,680px);padding:12px 20px;border:5px solid #17375f;border-radius:24px;background:#fffbd0;color:#17375f;font-size:clamp(1rem,2vw,1.8rem);font-weight:950;line-height:1.3;box-shadow:7px 8px #0005}.chrono-speech:before{content:"";position:absolute;left:-28px;bottom:28px;border:14px solid transparent;border-right-color:#17375f}
 .chrono-overlay.warning .chrono-shell{background:linear-gradient(145deg,#735f14,#302706 68%)}.chrono-overlay.urgent .chrono-shell{background:linear-gradient(145deg,#8a341f,#351009 68%)}.chrono-overlay.starting .chrono-shell{animation:departureGlow .65s ease-in-out 3}.chrono-overlay.success .chrono-shell{background:linear-gradient(145deg,#18704e,#092d20 68%)}.chrono-overlay.warning .chrono-time,.chrono-overlay.urgent .chrono-time{color:#fff5b5}.chrono-overlay.urgent .chrono-time{animation:chronoPulse .55s ease-in-out infinite alternate}
+.chrono-overlay.classroom .chrono-shell{background:linear-gradient(145deg,#163d56,#071f31 68%)}.chrono-overlay.classroom .chrono-time{color:#d9f6ff;text-shadow:0 7px 0 #061724,0 0 30px #55c7e8}.chrono-overlay.classroom .chrono-speech{background:#e6f8ff;border-color:#205d7a;color:#123f57}
 @keyframes chronoPulse{to{transform:scale(1.04);filter:brightness(1.2)}}@keyframes departureGlow{50%{box-shadow:0 0 0 8px #fff,0 0 85px #f2c94c}}
 .clock-dialog{width:min(900px,96vw)}.clock-form{display:grid;gap:14px}.clock-form label{display:grid;gap:6px;font-weight:950}.clock-form input[type="text"],.clock-form select{width:100%;border:3px solid #8bad9f;border-radius:12px;padding:11px;font:inherit}.clock-switches{display:grid;grid-template-columns:1fr 1fr;gap:9px}.clock-switch{display:flex!important;grid-template-columns:none!important;align-items:center;justify-content:space-between;gap:12px;padding:11px 14px;border:3px solid #b9d8ca;border-radius:13px;background:#f1fff7}.clock-switch input{width:28px;height:28px;accent-color:#176b54}.clock-preview{font-weight:900;color:#176b54}
 @media(max-width:800px){.chrono-shell{height:98dvh}.chrono-grid{grid-template-columns:38% 1fr;padding:12px}.chrono-time{font-size:clamp(4.4rem,16vw,8rem)}.chrono-status{font-size:clamp(1.2rem,3.5vw,2.1rem)}.chrono-speech{left:35%;bottom:2%;width:61vw}.clock-switches{grid-template-columns:1fr}.cb-actions{flex-wrap:wrap}}
@@ -386,7 +387,7 @@ body.presentation-mode{height:100dvh;min-height:0;overflow:hidden}
 </head>
 <body>
 <main class="app">
-<header><div class="mini">FINAL TEST JOURNEY</div><div class="title"><h1>期末考査までの道のり <span class="version-badge" aria-label="バージョン62 Web版">v62 Web</span></h1><p>今日の一歩が、ゴールにつながる。</p></div><div class="count"><span id="dateLabel">きょう</span><strong id="daysLeft">あと—日</strong><span>期末考査まで</span></div></header>
+<header><div class="mini">FINAL TEST JOURNEY</div><div class="title"><h1>期末考査までの道のり <span class="version-badge" aria-label="バージョン63 Web版">v63 Web</span></h1><p>今日の一歩が、ゴールにつながる。</p></div><div class="count"><span id="dateLabel">きょう</span><strong id="daysLeft">あと—日</strong><span>期末考査まで</span></div></header>
 <section class="scene" aria-label="期末考査までの進行ゲージ">
 <div class="journey">
 <button class="marker" id="marker" aria-label="キャラクターをタップするとリアクションします"><span class="speech" id="speech">歩いてゴールへ！</span><img class="character" id="character" src="assets/img/image-01.webp" alt="右向きに歩くペンギン"><span class="mood" id="mood">😄</span><span class="shadow"></span></button>
@@ -755,6 +756,7 @@ const LINES={
  warning:['あと5分。教科書とノートをそろえよう！','5分前だ。移動と準備を始めるぞ！','そろそろ席へ。余裕のある行動が格好いいぞ。'],
  urgent:['1分前着席の時間だ。静かに席へ！','あと1分。全員着席、準備完了を目指そう！','急げ、でも走らず安全に。まもなく授業だ！'],
  starting:['出発進行！ 授業を始めるぞ！','開始時刻だ。気持ちを切り替えよう！','時は来た。集中のスイッチ、オン！'],
+ classroom:['ただいま授業中。時計も静かに見守っているぞ。','集中の時間だ。一つずつ確実に学んでいこう！','授業中モードだ。今の学びを大切にするのだ！'],
  success:['1分前着席、見事だ！ 今日もよい出発だぞ！','全員着席を確認。すばらしい時間管理だ！','準備完了！ クロノから大きな合格印だ！']
 };
 const overlay=document.getElementById('chronoOverlay'),art=document.getElementById('chronoArt'),timeEl=document.getElementById('chronoTime'),dateEl=document.getElementById('chronoDate'),statusEl=document.getElementById('chronoStatus'),countdownEl=document.getElementById('chronoCountdown'),speechEl=document.getElementById('chronoSpeech');
@@ -766,9 +768,11 @@ function selectedTimes(){return parseTimes(settings.mode==='short'?settings.shor
 function dailyLine(state,now){const arr=LINES[state]||LINES.normal,index=(now.getFullYear()*372+(now.getMonth()+1)*31+now.getDate()+state.length)%arr.length;return arr[index]}
 function beep(kind){if(!settings.sound||lastSignal===kind)return;lastSignal=kind;try{const ctx=new (window.AudioContext||window.webkitAudioContext)(),gain=ctx.createGain(),osc=ctx.createOscillator();osc.connect(gain);gain.connect(ctx.destination);osc.frequency.value=kind==='starting'?880:kind==='urgent'?660:520;gain.gain.setValueAtTime(.001,ctx.currentTime);gain.gain.exponentialRampToValueAtTime(.16,ctx.currentTime+.02);gain.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+.35);osc.start();osc.stop(ctx.currentTime+.38)}catch{}}
 function compute(now){
- const times=selectedTimes(),minute=now.getHours()*60+now.getMinutes(),second=now.getSeconds();
+ const times=selectedTimes(),minute=now.getHours()*60+now.getMinutes(),second=now.getSeconds(),nowSeconds=minute*60+second,durationMinutes=settings.mode==='short'?45:50,duration=durationMinutes*60;
  if(!times.length)return {state:'normal',label:'時計設定から授業開始時刻を登録してください',remaining:null};
- let target=times.find(t=>t.minutes>minute||(t.minutes===minute&&second<=20));
+ const activeIndex=times.findIndex(t=>nowSeconds>=t.minutes*60&&nowSeconds<t.minutes*60+duration);
+ if(activeIndex>=0){const active=times[activeIndex],elapsed=nowSeconds-active.minutes*60,remaining=duration-elapsed,endMinutes=active.minutes+durationMinutes,endLabel=`${String(Math.floor(endMinutes/60)).padStart(2,'0')}:${String(endMinutes%60).padStart(2,'0')}`;if(elapsed<=20)return {state:'starting',label:`第${activeIndex+1}時限　${active.label} 授業開始！`,remaining};return {state:'classroom',label:`第${activeIndex+1}時限　授業中\n終了 ${endLabel}｜あと ${Math.ceil(remaining/60)} 分`,remaining}}
+ let target=times.find(t=>t.minutes*60>nowSeconds);
  if(!target)return {state:'normal',label:'本日の授業は終了しました',remaining:null};
  const remaining=(target.minutes-minute)*60-second;
  if(Date.now()<successUntil)return {state:'success',label:`${target.label} の授業｜1分前着席達成！`,remaining};
@@ -777,12 +781,13 @@ function compute(now){
  if(remaining<=300)return {state:'warning',label:`${target.label} まであと ${Math.ceil(remaining/60)} 分`,remaining};
  return {state:'normal',label:`次の授業 ${target.label}｜あと ${Math.floor(remaining/60)}分${String(remaining%60).padStart(2,'0')}秒`,remaining};
 }
-function setArt(state){const key=state==='starting'?'starting':state;if(art.dataset.state===key)return;art.classList.add('changing');setTimeout(()=>{art.src=CHRONO_IMAGES[key]||CHRONO_IMAGES.normal;art.dataset.state=key;art.classList.remove('changing')},160)}
+function setArt(state){const key=state==='classroom'?'success':state;if(art.dataset.state===key)return;art.classList.add('changing');setTimeout(()=>{art.src=CHRONO_IMAGES[key]||CHRONO_IMAGES.normal;art.dataset.state=key;art.classList.remove('changing')},160)}
 function renderClock(){
  const now=new Date(),info=compute(now);
  timeEl.textContent=now.toLocaleTimeString('ja-JP',{hour12:false,hour:'2-digit',minute:'2-digit',second:'2-digit'});
  dateEl.textContent=now.toLocaleDateString('ja-JP',{month:'long',day:'numeric',weekday:'short'})+'｜'+(settings.mode==='short'?'短縮時程':'通常時程');
  statusEl.textContent=info.label;
+ document.getElementById('chronoSeat').hidden=info.state==='classroom';
  if(info.state!==lastState){overlay.classList.remove('normal','warning','urgent','starting','success');overlay.classList.add(settings.color?info.state:'normal');speechEl.textContent=dailyLine(info.state,now);setArt(settings.character?info.state:'normal');lastState=info.state;lastSignal='';if(['warning','urgent','starting'].includes(info.state))beep(info.state)}
  const showCount=settings.countdown&&info.state==='urgent'&&info.remaining!==null&&info.remaining<=10&&info.remaining>0;countdownEl.classList.toggle('show',showCount);countdownEl.textContent=showCount?info.remaining:'';
 }
