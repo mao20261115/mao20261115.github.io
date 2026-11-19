@@ -893,7 +893,7 @@ function selectDate(d){displayedDate=new Date(d.getFullYear(),d.getMonth(),d.get
 viewButton.onclick=()=>calendarMode?showRoute():showCalendar();
 document.getElementById('calendarPrev').onclick=()=>{calendarMonth.setMonth(calendarMonth.getMonth()-1);renderCalendar()};
 document.getElementById('calendarNext').onclick=()=>{calendarMonth.setMonth(calendarMonth.getMonth()+1);renderCalendar()};
-document.getElementById('calendarToday').onclick=()=>{calendarMonth=new Date();calendarMonth.setDate(1);renderCalendar()};
+document.getElementById('calendarToday').onclick=()=>selectDate(new Date());
 
 function formatDay(d){return `${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日（${'日月火水木金土'[d.getDay()]}）`}
 function applyDay(){const key=keyOf(displayedDate),entry=entryFor(key),b=entry?.classes?.[className()]||{},fallback=rootObject()[className()]||{},useFallback=fallback.date===key;document.getElementById('selectedClassName').textContent=(b.title||(useFallback?fallback.title:'')?`${b.title||(useFallback?fallback.title:'')}｜`:'')+className();document.getElementById('boardTasks').textContent=b.tasks||(useFallback?fallback.tasks:'')||'未入力';document.getElementById('boardCommonNotice').textContent=entry?.common||(useFallback?localStorage.getItem('kimatsu_common_notice_v1'):'')||'未入力';document.getElementById('boardNotices').textContent=b.notices||(useFallback?fallback.notices:'')||'未入力';dayBanner.textContent=`📅 ${formatDay(displayedDate)}${calendarEvent(key)?'　｜　'+calendarEvent(key):''}`;dayBanner.classList.add('show');if(calendarMode)renderCalendar()}
@@ -936,7 +936,7 @@ document.getElementById('saveSupplySet').onclick=()=>{const set=activeSet();set.
 document.getElementById('newSupplySet').onclick=()=>{const id='set_'+Date.now();planner.supplySets.push({id,name:'新しい持ち物セット',items:Array.from({length:7},()=>({icon:'🎒',label:'持ち物',enabled:true}))});planner.activeSupplySetId=id;entryFor(keyOf(displayedDate),true).supplySetId=id;savePlanner();renderSupplies();renderSupplyEditor()};
 document.getElementById('deleteSupplySet').onclick=()=>{if(planner.supplySets.length<=1)return;const old=activeSet().id;planner.supplySets=planner.supplySets.filter(x=>x.id!==old);planner.activeSupplySetId=planner.supplySets[0].id;Object.values(planner.entries).forEach(e=>{if(e.supplySetId===old)delete e.supplySetId});savePlanner();renderSupplies();renderSupplyEditor()};
 
-window.addEventListener('storage',e=>{if(e.key!==BOARD_STORE)return;const latest=loadPlanner();planner=latest;updateGoal()});
+window.addEventListener('storage',e=>{if(e.key!==BOARD_STORE)return;window.kimatsuBoards=parse(e.newValue,{});planner=loadPlanner();updateGoal()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.planner-modal.open').forEach(x=>x.classList.remove('open'))});
 updateGoal();applyDay();
 })();
