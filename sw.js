@@ -1,4 +1,4 @@
-const CACHE_NAME='study-journey-v77';
+const CACHE_NAME='study-journey-v78';
 const CORE=['./','./index.html','./manifest.webmanifest'];
 
 self.addEventListener('install',event=>{
